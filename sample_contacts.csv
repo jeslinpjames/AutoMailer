@@ -1,5 +1,5 @@
-name,job description,details,email
-John Doe,Software Engineer,We have an experienced developer who has worked on multiple large-scale projects.,johndoe@example.com
-Jane Smith,Project Manager,Our candidate has over 10 years of experience in managing complex projects in various industries.,janesmith@example.com
-Mike Johnson,Data Scientist,We can offer a skilled data scientist with expertise in machine learning and data analysis.,mikejohnson@example.com
-Emily Davis,UX Designer,Our UX designer has a strong portfolio with a focus on user-centered design and usability.,emilydavis@example.com
+name,job description,details,expertise,email
+John Doe,Software Engineer,We have an experienced developer who has worked on multiple large-scale projects.,Backend Development,johndoe@example.com
+Jane Smith,Project Manager,Our candidate has over 10 years of experience in managing complex projects in various industries.,Agile Methodologies and Scrum,janesmith@example.com
+Mike Johnson,Data Scientist,We can offer a skilled data scientist with expertise in machine learning and data analysis.,Predictive Modeling and Data Mining,mikejohnson@example.com
+Emily Davis,UX Designer,Our UX designer has a strong portfolio with a focus on user-centered design and usability.,User Research and Usability Testing,emilydavis@example.com
