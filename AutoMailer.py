@@ -8,7 +8,7 @@ def clean_text(text):
     """Helper function to clean up the text by removing unnecessary characters."""
     return text.replace('**', '').strip()
 
-def generate_email(name, job_description, details, result_queue):
+def generate_email(name, job_description, details, expertise, result_queue):
     prompt = f"""
     Please generate a professional email with the following structure. It's crucial that the format matches exactly as described below:
     
@@ -16,7 +16,7 @@ def generate_email(name, job_description, details, result_queue):
     
     2. **Body:** 
     - **Introduction:** Begin with a friendly greeting, mention my name and that I am from [Your Company Name]. 
-    - **Main Content:** Clearly state that I am reaching out because we have a highly qualified candidate who would be an excellent fit for the {job_description} role. Mention that I would like to discuss further or arrange an interview.
+    - **Main Content:** Clearly state that I am reaching out because we have a highly qualified candidate who would be an excellent fit for the {job_description} role. Mention that they specialize in {expertise} and that I would like to discuss further or arrange an interview.
     - **Closing:** End with a warm closing, inviting further communication, and expressing optimism about potential collaboration.
     
     This is the role of the person {name}: {details}
@@ -67,10 +67,11 @@ def email_generation_process(csv_file, result_queue):
             name = row['name']
             job_description = row['job description']
             details = row['details']
+            expertise = row['expertise']
             to_email = row['email']
             
             # Generate the email and save it to the queue
-            generate_email(name, job_description, details, result_queue)
+            generate_email(name, job_description, details, expertise, result_queue)
     
     # Indicate that generation is done by putting a sentinel value in the queue
     result_queue.put(None)
